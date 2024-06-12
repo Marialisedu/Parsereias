@@ -1,0 +1,74 @@
+<!--https://github.com/Marialisedu/Front-End-Ods-14.git-->
+
+<!-- Maria Eduarda da Silva Lima RA: 2614561
+Kelcilene Tomie Nakamura RA: 2600960
+Rodrigo Araújo Sampaio Câmara RA: 1206885
+-->
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Cadastro.css"/>
+    <title>ParSEREIAS_Cadastro</title>
+</head>
+
+
+<body>
+
+    <nav class = "menu">
+        <a href="PaginaInicial.html">  Home</a> <a href="Login.html">Login</a> <a href="Cadastro.html" >Cadastro</a>
+    </nav>
+
+    <div class="centro">
+    <div class="centralizar">
+
+    <div class="wrapper">
+    <h1><span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">CADASTRO</span></h1>
+   
+    <label for="username" class="username">Nome:</label>
+    <div class="nome">
+        <input type="text" id="username" name="nome" placeholder="Nome" required><br>
+    </div>
+    
+    <label for="telefone" class="username"> Telefone ou Celular:</label>
+    <div class ="telefone">
+        <input type= "tel" id="telefone" name="telefone" placeholder="Telefone" pattern="([0-9]{2}) [0=9]{5}-[0-9]{4}" required/><br>
+    </div>
+    
+    <label for="mail" class="username">E-mail:</label>
+    <div class="mail">
+        <input type="text" id="mail" name="E-mail" placeholder="E-mail" required><br>    
+    </div>
+         
+        <label for="senha" class="username">Senha:</label>
+    <div class="senha">
+        <input type="password" id="senha" name="senha" placeholder="Senha" required><br>
+    </div>
+     
+    <label for="identificando" class="selecao" >Eu sou: </label>
+    <div class="list">
+    <select name="Eu sou" id="identificando">
+        <option value="Empresa">Empresa</option>
+        <option value="Fornecedor">Fornecedor</option>
+    </select><br>
+    </div> 
+
+    <div class="Cadastrar">
+        <a  href="PaginaInicial.html"><input type="button" value="Cadastrar" id="cadastrar"></a>
+    </div>
+    
+    <div class="register-link">
+        <p>Já possui uma conta? <a href= "Login.html">Login</a></p>
+    </div>
+    
+    </div>
+    </div>
+    </div>
+
+    
+
+</body>
+</html>
