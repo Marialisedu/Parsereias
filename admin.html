@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin.css" />
+    <title>Document</title>
+</head>
+
+<body background="decada-do-oceano.png">
+
+    <nav class="menu">
+        <a href="PaginaInicial.html"> Home</a> <a href="Login.html">Login</a> <a href="Cadastro.html">Cadastro</a> <a
+            href="admin.html">Admin</a>
+    </nav>
+
+    <div class="centro">
+        <div class="centralizar">
+            <div class="wrapper">
+                <h1>CADASTRO ADM</h1>
+                <form id="adminForm">
+                <label for="username" class="username">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Nome" required><br>
+                <label for="mail" class="username">E-mail:</label>
+                <input type="text" id="email" name="E-mail" placeholder="E-mail" required><br>
+                <button type="submit">Cadastrar</button>
+                </form>
+                <input type="text" id="searchInput" placeholder="Pesquisar"><br>
+                <button class="bntPesquisar" id="searchButton">Pesquisar</button><br>
+                <button class="bntLimpar" id="limparLista">Limpar Lista</button>
+            </div>
+        </div>
+    </div>
+
+    <ul id="adminList"></ul>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

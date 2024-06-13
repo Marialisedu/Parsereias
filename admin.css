@@ -1,0 +1,163 @@
+body {
+
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.wrapper {
+    width: 420px;
+    background: transparent;
+    backdrop-filter: blur(5px);
+    color: black;
+    border-radius: 10px;
+    padding: 30px 40px;
+    text-align: center;
+}
+
+h1 {
+
+    margin: 5px;
+    padding: 0 10px;
+    color: rgb(10, 10, 10);
+    text-align: center;
+    justify-content: center;
+    font-size: 1.5em;
+    color: white;
+}
+
+.menu {
+
+    margin: 5px;
+    padding: 0 10px;
+    color: beige;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+nav {
+
+    border-style: outset;
+    border-width: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: rgb(132, 214, 214);
+
+}
+
+.centro {
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-size: 30px;
+    color: black
+}
+
+.centralizar {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-size: 30px;
+    color: black
+}
+
+.username {
+
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: rgb(132, 214, 214);
+    border-radius: 30px;
+}
+
+#nome {
+
+    padding-top: 5px;
+    font-size: 18px;
+
+}
+
+#email {
+
+    padding-top: 5px;
+    font-size: 18px;
+
+}
+
+#cadastrar {
+
+    margin-top: 20px;
+    font-size: 25px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    border-radius: 15px;
+    
+}
+
+button[type="submit"] {
+    padding: 10px;
+    width: 30%;
+    background: rgb(132, 214, 214);;
+    color: #000000;
+    float: center;
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.bntLimpar {
+    text-align: center;
+    float: center;
+    padding: 10px;
+    width: 30%;
+    background: #e76e6e;
+    color: #000000;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 20px;
+    margin-top: 15px;
+}
+.bntPesquisar {
+    text-align: center;
+    float: center;
+    padding: 10px;
+    width: 30%;
+    background: #8ff3a8;
+    color: #000000;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 20px;
+    margin-top: 15px;
+}
+#searchInput {
+    padding-top: 5px;
+    font-size: 18px;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 5px;
+  }
