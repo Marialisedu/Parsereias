@@ -37,6 +37,11 @@ function renderAdminList(admins) {
 getAdminList();
 renderAdminList(adminList);
 
+function clearForm(){
+  var form = document.getElementById('adminForm');
+  form.reset();
+}
+
 document.getElementById('adminForm').addEventListener('submit', function (event) {
   event.preventDefault();
   var nameInput = document.getElementById('nameInput');
@@ -44,6 +49,7 @@ document.getElementById('adminForm').addEventListener('submit', function (event)
   addAdmin(nameInput.value, emailInput.value);
   nameInput.value = '';
   emailInput.value = '';
+  clearForm();
 });
 localStorage.removeItem('nome');
 if (localStorage.getItem('nome') !== null) {
