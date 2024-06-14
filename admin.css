@@ -121,6 +121,21 @@ button[type="submit"] {
     margin-top: 15px;
 }
 
+.bntLF{
+    padding: 10px;
+    width: 40%;
+    background: #e76e6e;
+    color: #000000;
+    float: center;
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
 .bntLimpar {
     text-align: center;
     float: center;
