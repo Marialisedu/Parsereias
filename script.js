@@ -1,7 +1,8 @@
 var adminList = [];
 var count = 1;
+
 function addAdmin(name, email) {
-  var newAdmin = { id: count++, name: name, email: email };
+  var newAdmin = { id: count++, name: name, email: email, date: new Date()};
   adminList.push(newAdmin);
   localStorage.setItem('adminList', JSON.stringify(adminList));
   renderAdminList();
@@ -37,40 +38,43 @@ function renderAdminList(admins) {
 getAdminList();
 renderAdminList(adminList);
 
-function clearForm(){
-  var form = document.getElementById('adminForm');
-  form.reset();
-}
-
 document.getElementById('adminForm').addEventListener('submit', function (event) {
   event.preventDefault();
   var nameInput = document.getElementById('nameInput');
-  var emailInput = document.getElementById('emailInput');
-  addAdmin(nameInput.value, emailInput.value);
+  var mailInput = document.getElementById('mailInput');
+  addAdmin(nameInput.value, mailInput.value);
   nameInput.value = '';
-  emailInput.value = '';
-  clearForm();
+  mailInput.value = '';
 });
 localStorage.removeItem('nome');
 if (localStorage.getItem('nome') !== null) {
   localStorage.removeItem('nome');
-
 }
-function deleteAllAdmins(){
+
+document.getElementById('LimparForm').addEventListener('click', function(event) {
+  event.preventDefault(); 
+  var nameInput = document.getElementById('nameInput');
+  var mailInput = document.getElementById('mailInput');
+  nameInput.value = '';
+  mailInput.value = '';
+});
+
+
 document.getElementById('limparLista').addEventListener('click', function () {
-  let lista = document.getElementById('AdminList');
+  adminList = [];
+  localStorage.setItem('adminList', JSON.stringify(adminList));
+  let lista = document.getElementById('adminList');
   while (lista.firstChild) {
     lista.removeChild(lista.firstChild);
   }
 });
-}
 
-function searchAdmins() {
-  var procurar = document.getElementById('searchInput').value
+function searchAdmin() {
+  var procurar = document.getElementById('searchInput');
   var filteredAdminList = adminList.filter(function (admin) {
     return admin.name.includes(procurar) || admin.email.includes(procurar);
   });
   renderAdminList(filteredAdminList);
 }
-document.getElementById('limparLista').addEventListener('click', deleteAllAdmins);
-document.getElementById('searchButton').addEventListener('click', searchAdmins);
+
+document.getElementById('searchButton').addEventListener('click', searchAdmin);
