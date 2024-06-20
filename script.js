@@ -25,13 +25,19 @@ function getAdminList() {
   var storedList = JSON.parse(localStorage.getItem('adminList'));
   adminList = storedList || [];
 }
-function renderAdminList(admins) {
+function renderAdminList() {
+
+  const dataAtual = new Date();
+  const dia = dataAtual.getDate(); 
+  const mes = dataAtual.getMonth(); 
+  const ano = dataAtual.getFullYear();
+  
   var adminListElement = document.getElementById('adminList');
   adminListElement.innerHTML = '';
 
   adminList.forEach(function (admin) {
     var listItem = document.createElement('li');
-    listItem.innerHTML = '<span class="admin-name">' + admin.name + '</span> (Email: ' + admin.email + ') <button class="delete-button" onclick="deleteAdmin(' + admin.id + ')">Excluir</button>';
+    listItem.innerHTML = '<span class="admin-name">' + admin.name + '</span> (Email: ' + admin.email + ') ' + dia + ' / ' + (mes +1) + ' / ' + ano + ' <button class="delete-button" onclick="deleteAdmin(' + admin.id + ')">Excluir</button>';
     adminListElement.appendChild(listItem);
   });
 }
@@ -70,11 +76,19 @@ document.getElementById('limparLista').addEventListener('click', function () {
 });
 
 function searchAdmin() {
-  var procurar = document.getElementById('searchInput');
-  var filteredAdminList = adminList.filter(function (admin) {
-    return admin.name.includes(procurar) || admin.email.includes(procurar);
-  });
-  renderAdminList(filteredAdminList);
+  var searchTerm = document.getElementById("searchInput").value.toLowerCase();
+  var adminListElement = document.getElementById('adminList');
+  var admins = adminListElement.getElementsByTagName('li');
+
+  for (let admin of admins) {
+    const name = admin.querySelector('.admin-name').textContent.toLowerCase();
+
+    if (searchTerm ==="" || name.includes(searchTerm)) {
+      admin.style.display='';
+    } else {
+      admin.style.display='none';
+    }
+  }
 }
 
-document.getElementById('searchButton').addEventListener('click', searchAdmin);
+document.getElementById('searchInput').addEventListener('input', searchAdmin);
